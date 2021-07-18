@@ -245,20 +245,20 @@ document.addEventListener('DOMContentLoaded', function () {
   // Get joke as soon as page loads
   getJoke('general');
 });
-document.querySelector('button#get-joke').addEventListener('click', function (e) {
-  var jokeType = document.querySelector('#hear-joke #joke-type').value; // Make button disabled until joke fetching is completed
+document.querySelector('#get-joke').addEventListener('click', function (e) {
+  var jokeType = document.querySelector('#hear-joke-section #joke-type').value; // Make button disabled until joke fetching is completed
 
-  document.querySelector('button#get-joke').disabled = true;
+  document.querySelector('#get-joke').disabled = true;
   getJoke(jokeType);
 });
-document.querySelector('button#create-joke').addEventListener('click', function (e) {
-  var jokeType = 'test'; //document.querySelector('#create-joke #joke-type').value;
+document.querySelector('#create-joke').addEventListener('click', function (e) {
+  var jokeType = 'test'; //document.querySelector('#create-joke-section #joke-type').value;
 
-  var setup = document.querySelector('#create-joke #setup').value.trim();
-  var punchline = document.querySelector('#create-joke #punchline').value.trim();
+  var setup = document.querySelector('#create-joke-section #setup').value.trim();
+  var punchline = document.querySelector('#create-joke-section #punchline').value.trim();
   if (setup == '' || punchline == '') return; // Make button disabled until joke creation is completed
 
-  document.querySelector('button#create-joke').disabled = true;
+  document.querySelector('#create-joke').disabled = true;
   createJoke(jokeType, setup, punchline);
 }); // Get joke from API and display it on page
 
@@ -266,11 +266,11 @@ var getJoke = function getJoke(jokeType) {
   _joke.joke.getJoke(jokeType).then(function (joke) {
     document.querySelector('#joke').innerHTML = "<div class=\"setup\">".concat(joke.setup.trim(), "</div><br /><div class=\"punchline\">").concat(joke.punchline.trim(), "</div>"); // Enable button
 
-    document.querySelector('button#get-joke').disabled = false;
+    document.querySelector('#get-joke').disabled = false;
   }).catch(function (error) {
     document.querySelector('#joke').innerHTML = "<div class=\"error\">Something went wrong !!</div>"; //Enable button
 
-    document.querySelector('button#get-joke').disabled = false;
+    document.querySelector('#get-joke').disabled = false;
   });
 }; // Create joke using API
 
@@ -280,11 +280,11 @@ var createJoke = function createJoke(jokeType, setup, punchline) {
     console.log(res);
     if (res.id != '') alert('joke created successfully');else alert('something went wrong'); //Enable button
 
-    document.querySelector('button#create-joke').disabled = false;
+    document.querySelector('#create-joke').disabled = false;
   }).catch(function (error) {
     console.log(error); //Enable button
 
-    document.querySelector('button#create-joke').disabled = false;
+    document.querySelector('#create-joke').disabled = false;
   });
 };
 },{"./joke":"js/custom/joke.js","./../../scss/custom/main.scss":"scss/custom/main.scss"}],"C:/Users/owner/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {

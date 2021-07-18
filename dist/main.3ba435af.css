@@ -68,27 +68,27 @@ body {
   border-radius: 15px;
 }
 
-#hear-joke {
+#hear-joke-section {
   background-color: #364f6b;
 }
-#hear-joke .wrapper {
+#hear-joke-section .wrapper {
   text-align: center;
   background-color: #2d425a;
   padding: 1em;
 }
-#hear-joke .wrapper .controls {
+#hear-joke-section .wrapper .controls {
   margin: 1em 0 0 0;
 }
 
-#create-joke {
+#create-joke-section {
   background-color: #f0f0f0;
 }
-#create-joke .wrapper {
+#create-joke-section .wrapper {
   text-align: center;
   background-color: #e3e3e3;
   padding: 1em;
 }
-#create-joke .wrapper .controls {
+#create-joke-section .wrapper .controls {
   margin: 1em 0 0 0;
 }
 
@@ -124,6 +124,17 @@ select option {
 }
 .btn-primary[disabled] {
   background-color: #fd83a8;
+}
+
+.btn-secondary {
+  background-color: #43dde6;
+  color: white;
+}
+.btn-secondary:hover {
+  background-color: #2cd9e3;
+}
+.btn-secondary[disabled] {
+  background-color: #70e5ec;
 }
 
 .btn-primary-awesome {

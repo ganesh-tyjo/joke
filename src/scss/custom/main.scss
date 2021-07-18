@@ -76,7 +76,7 @@ body {
   border-radius: 15px;
 }
 
-#hear-joke {
+#hear-joke-section {
   background-color: $dark;
 
   .wrapper {
@@ -90,7 +90,7 @@ body {
   }
 }
 
-#create-joke {
+#create-joke-section {
   background-color: $light;
 
   .wrapper {
@@ -141,6 +141,19 @@ select {
 
   &[disabled] {
     background-color: lighten($color: $primary, $amount: 10);
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  color: white;
+
+  &:hover {
+    background-color: darken($color: $secondary, $amount: 5);
+  }
+
+  &[disabled] {
+    background-color: lighten($color: $secondary, $amount: 10);
   }
 }
 
