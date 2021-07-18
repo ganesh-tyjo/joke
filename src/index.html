@@ -21,6 +21,7 @@
           </div>
         </div>
         <div class="wrapper">
+          <div id="joke"></div>
           <div class="controls">
             <select id="joke-type">
               <option value="general">General</option>
@@ -30,14 +31,27 @@
               Tell Me a Joke
             </button>
           </div>
-          <div id="joke"></div>
         </div>
       </main>
     </section>
 
     <section id="create-joke" class="section">
       <main>
-        <div class="wrapper">Create your joke here</div>
+        <div class="wrapper">
+          <div class="fields">
+            <label for="setup">Setup</label>
+            <input type="text" id="setup" />
+            <label for="punchline">Punchline</label>
+            <input type="text" id="punchline" />
+          </div>
+          <div class="controls">
+            <select id="joke-type">
+              <option value="general">General</option>
+              <option value="programming">Programming</option>
+            </select>
+            <button id="get-joke" class="btn btn-primary">Create Joke</button>
+          </div>
+        </div>
       </main>
     </section>
 
