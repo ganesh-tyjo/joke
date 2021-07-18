@@ -31,9 +31,21 @@
   height: 100%;
 }
 
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 12px;
+  }
+
+  .form .w-25,
+.form .w-50,
+.form .w-75 {
+    width: 100%;
+  }
+}
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -120,7 +132,27 @@ body {
   background-color: #e3e3e3;
   padding: 1em;
 }
-#create-joke-section .wrapper input[type=text] {
+#create-joke-section .wrapper .form {
+  display: flex;
+  justify-content: center;
+}
+#create-joke-section .wrapper .form .fields {
+  text-align: left;
+}
+#create-joke-section .wrapper .form .fields:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#create-joke-section .wrapper .form .fields div {
+  float: left;
+}
+#create-joke-section .wrapper .form .fields label {
+  font-size: 1.2rem;
+  display: inline-block;
+  padding: 0.6em 0.8em;
+}
+#create-joke-section .wrapper .form .fields input[type=text] {
   border-radius: 8px;
   font-size: 1rem;
   padding: 0.8em;

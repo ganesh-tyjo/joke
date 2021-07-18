@@ -1,11 +1,13 @@
 @import './variables';
 @import './utilities';
+@import './mobile';
 
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -99,13 +101,38 @@ body {
     background-color: darken($color: $light, $amount: 5);
     padding: 1em;
 
-    input[type='text'] {
-      border-radius: 8px;
-      font-size: 1rem;
-      padding: 0.8em;
-      margin: 0.2em;
-      border: none;
-      outline: none;
+    .form {
+      display: flex;
+      justify-content: center;
+
+      .fields {
+        text-align: left;
+
+        &:after {
+          content: '';
+          display: table;
+          clear: both;
+        }
+
+        div {
+          float: left;
+        }
+
+        label {
+          font-size: 1.2rem;
+          display: inline-block;
+          padding: 0.6em 0.8em;
+        }
+
+        input[type='text'] {
+          border-radius: 8px;
+          font-size: 1rem;
+          padding: 0.8em;
+          margin: 0.2em;
+          border: none;
+          outline: none;
+        }
+      }
     }
 
     .controls {
