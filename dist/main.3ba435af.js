@@ -252,8 +252,7 @@ document.querySelector('#get-joke').addEventListener('click', function (e) {
   getJoke(jokeType);
 });
 document.querySelector('#create-joke').addEventListener('click', function (e) {
-  var jokeType = 'test'; //document.querySelector('#create-joke-section #joke-type').value;
-
+  var jokeType = document.querySelector('#create-joke-section #joke-type').value;
   var setup = document.querySelector('#create-joke-section #setup').value.trim();
   var punchline = document.querySelector('#create-joke-section #punchline').value.trim();
   if (setup == '' || punchline == '') return; // Make button disabled until joke creation is completed

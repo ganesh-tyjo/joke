@@ -1,0 +1,12 @@
+// Width & height percentages
+$width-height-percentages: (25, 50, 75, 100);
+
+@each $percent in $width-height-percentages {
+  .w-#{$percent} {
+    width: percentage($percent/100);
+  }
+
+  .h-#{$percent} {
+    height: percentage($percent/100);
+  }
+}

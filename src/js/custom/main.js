@@ -21,7 +21,9 @@ document.querySelector('#get-joke').addEventListener('click', (e) => {
 });
 
 document.querySelector('#create-joke').addEventListener('click', (e) => {
-  const jokeType = 'test'; //document.querySelector('#create-joke-section #joke-type').value;
+  const jokeType = document.querySelector(
+    '#create-joke-section #joke-type'
+  ).value;
   const setup = document
     .querySelector('#create-joke-section #setup')
     .value.trim();
