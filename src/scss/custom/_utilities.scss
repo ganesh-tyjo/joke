@@ -10,3 +10,48 @@ $width-height-percentages: (25, 50, 75, 100);
     height: percentage($percent/100);
   }
 }
+
+// Margin & padding
+$space-amounts: (0, 1, 2, 3, 4, 5);
+
+@each $space-amount in $space-amounts {
+  .m-#{$space-amount} {
+    margin: #{$space-amount}em;
+  }
+
+  .mt-#{$space-amount} {
+    margin-top: #{$space-amount}em;
+  }
+
+  .mr-#{$space-amount} {
+    margin-right: #{$space-amount}em;
+  }
+
+  .mb-#{$space-amount} {
+    margin-bottom: #{$space-amount}em;
+  }
+
+  .ml-#{$space-amount} {
+    margin-left: #{$space-amount}em;
+  }
+
+  .p-#{$space-amount} {
+    padding: #{$space-amount}em;
+  }
+
+  .pt-#{$space-amount} {
+    padding-top: #{$space-amount}em;
+  }
+
+  .pr-#{$space-amount} {
+    padding-right: #{$space-amount}em;
+  }
+
+  .pb-#{$space-amount} {
+    padding-bottom: #{$space-amount}em;
+  }
+
+  .pl-#{$space-amount} {
+    padding-left: #{$space-amount}em;
+  }
+}
