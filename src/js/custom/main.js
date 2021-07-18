@@ -9,13 +9,28 @@ document.addEventListener('DOMContentLoaded', () => {
   getJoke('general');
 });
 
-document.querySelector('#get-joke').addEventListener('click', (e) => {
+document.querySelector('button#get-joke').addEventListener('click', (e) => {
   const jokeType = document.querySelector('#hear-joke #joke-type').value;
 
   // Make button disabled until joke fetching is completed
-  document.querySelector('#get-joke').disabled = true;
+  document.querySelector('button#get-joke').disabled = true;
 
   getJoke(jokeType);
+});
+
+document.querySelector('button#create-joke').addEventListener('click', (e) => {
+  const jokeType = 'test'; //document.querySelector('#create-joke #joke-type').value;
+  const setup = document.querySelector('#create-joke #setup').value.trim();
+  const punchline = document
+    .querySelector('#create-joke #punchline')
+    .value.trim();
+
+  if (setup == '' || punchline == '') return;
+
+  // Make button disabled until joke creation is completed
+  document.querySelector('button#create-joke').disabled = true;
+
+  createJoke(jokeType, setup, punchline);
 });
 
 // Get joke from API and display it on page
@@ -28,7 +43,7 @@ const getJoke = (jokeType) => {
       ).innerHTML = `<div class="setup">${joke.setup.trim()}</div><br /><div class="punchline">${joke.punchline.trim()}</div>`;
 
       // Enable button
-      document.querySelector('#get-joke').disabled = false;
+      document.querySelector('button#get-joke').disabled = false;
     })
     .catch((error) => {
       document.querySelector(
@@ -36,6 +51,27 @@ const getJoke = (jokeType) => {
       ).innerHTML = `<div class="error">Something went wrong !!</div>`;
 
       //Enable button
-      document.querySelector('#get-joke').disabled = false;
+      document.querySelector('button#get-joke').disabled = false;
+    });
+};
+
+// Create joke using API
+const createJoke = (jokeType, setup, punchline) => {
+  joke
+    .createJoke(jokeType, setup, punchline)
+    .then((res) => {
+      console.log(res);
+
+      if (res.id != '') alert('joke created successfully');
+      else alert('something went wrong');
+
+      //Enable button
+      document.querySelector('button#create-joke').disabled = false;
+    })
+    .catch((error) => {
+      console.log(error);
+
+      //Enable button
+      document.querySelector('button#create-joke').disabled = false;
     });
 };
