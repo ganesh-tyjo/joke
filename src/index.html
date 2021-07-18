@@ -7,7 +7,7 @@
     <title>Joke</title>
   </head>
   <body>
-    <section id="hear-joke" class="section">
+    <section id="hear-joke-section" class="section">
       <main>
         <div class="wallpaper">
           <div class="quote">
@@ -21,6 +21,7 @@
           </div>
         </div>
         <div class="wrapper">
+          <div id="joke"></div>
           <div class="controls">
             <select id="joke-type">
               <option value="general">General</option>
@@ -30,14 +31,55 @@
               Tell Me a Joke
             </button>
           </div>
-          <div id="joke"></div>
         </div>
       </main>
     </section>
 
-    <section id="create-joke" class="section">
+    <section id="create-joke-section" class="section">
       <main>
-        <div class="wrapper">Create your joke here</div>
+        <div class="wallpaper">
+          <img src="./content/images/monkey-illustration.png" />
+        </div>
+        <div class="wrapper">
+          <div class="form">
+            <div class="fields w-75">
+              <div class="w-25">
+                <label for="setup" class="w-100">Setup</label>
+              </div>
+              <div class="w-75">
+                <input
+                  type="text"
+                  id="setup"
+                  class="w-100"
+                  placeholder="Please enter setup line"
+                />
+              </div>
+              <br />
+              <div class="w-100 mt-1">
+                <div class="w-25">
+                  <label for="punchline" class="w-100">Punchline</label>
+                </div>
+                <div class="w-75">
+                  <input
+                    type="text"
+                    id="punchline"
+                    class="w-100"
+                    placeholder="Please enter punchline"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="controls">
+            <select id="joke-type">
+              <option value="general">General</option>
+              <option value="programming">Programming</option>
+            </select>
+            <button id="create-joke" class="btn btn-secondary-awesome">
+              Create Joke
+            </button>
+          </div>
+        </div>
       </main>
     </section>
 
